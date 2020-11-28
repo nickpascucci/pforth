@@ -47,6 +47,7 @@
 #define FALSE (0)
 #endif
 
+#ifndef PF_NO_MAIN
 #ifdef PF_EMBEDDED
 int main( void )
 {
@@ -147,5 +148,6 @@ on_error:
 }
 
 #endif  /* PF_EMBEDDED */
-
-
+#else
+#warning Omitting main() function
+#endif  /* PF_NO_MAIN */
