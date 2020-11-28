@@ -20,6 +20,8 @@ PFORTHDIC    = pforth.dic
 PFDICDAT     = pfdicdat.h
 PFORTHAPP    = pforth_standalone
 
+PF_USER_CUSTOM ?= pfcustom.c
+
 # This is needed to get pForth to build on Snow Leopard and other 64 bit platforms.
 WIDTHOPT=
 
@@ -52,7 +54,7 @@ PFINCLUDES = pf_all.h pf_cglue.h pf_clib.h pf_core.h pf_float.h \
 	pfcompil.h pfdicdat_arm.h pfinnrfp.h pforth.h
 PFBASESOURCE = pf_cglue.c pf_clib.c pf_core.c pf_inner.c \
 	pf_io.c pf_io_none.c pf_main.c pf_mem.c pf_save.c \
-	pf_text.c pf_words.c pfcompil.c pfcustom.c
+	pf_text.c pf_words.c pfcompil.c $(PF_USER_CUSTOM)
 PFSOURCE = $(PFBASESOURCE) $(IO_SOURCE)
 
 VPATH = .:$(CSRCDIR):$(CSRCDIR)/posix:$(CSRCDIR)/stdio:$(CSRCDIR)/win32_console:$(CSRCDIR)/win32

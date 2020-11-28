@@ -29,6 +29,8 @@ PFORTHDIC    = pforth.dic
 PFDICDAT     = pfdicdat.h
 PFORTHAPP    = amiga_pforth_standalone
 
+PF_USER_CUSTOM ?= pfcustom.c
+
 # We need to create a 32-bit dictionary
 WIDTHOPT= -m32
 DEBUGOPTS = -g
@@ -56,7 +58,7 @@ PFINCLUDES = pf_all.h pf_cglue.h pf_clib.h pf_core.h pf_float.h \
 	pfcompil.h pfdicdat_arm.h pfinnrfp.h pforth.h
 PFBASESOURCE = pf_cglue.c pf_clib.c pf_core.c pf_inner.c \
 	pf_io.c pf_io_none.c pf_main.c pf_mem.c pf_save.c \
-	pf_text.c pf_words.c pfcompil.c pfcustom.c
+	pf_text.c pf_words.c pfcompil.c $(PF_USER_CUSTOM)
 PFSOURCE = $(PFBASESOURCE) $(IO_SOURCE)
 
 VPATH = .:$(CSRCDIR):$(CSRCDIR)/posix:$(CSRCDIR)/stdio
